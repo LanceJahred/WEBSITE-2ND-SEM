@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Crimson Text', serif;
+}
+
+/* Body Styling */
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-image: url(../1739689510633.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Sign Up Box */
+section {
+    position: relative;
+    max-width: 500px;
+    background: rgba(40, 39, 39, 0.6);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    backdrop-filter: blur(30px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 3rem;
+    transition: all 0.5s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Title */
+h1 {
+    font-size: 2.5rem;
+    color: #b2c5c5ac;
+    text-align: center;
+    font-weight: 700;
+}
+
+/* Input Box */
+.inputbox {
+    position: relative;
+    margin: 15px 0;
+    width: 100%;
+}
+
+/* Input Field */
+.inputbox input {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #ffffff;
+    outline: none;
+    font-size: 1rem;
+    padding: 10px 15px;
+    color: #ffffff;
+    border-radius: 8px;
+    transition: 0.4s ease-in-out;
+}
+
+/* Placeholder Styling Like in Image */
+.inputbox input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1rem;
+}
+
+/* Neon Glow Effect */
+.inputbox input:focus {
+    border-color: #8e9292;
+    box-shadow: 0 0 50px #7f8386, 0 0 50px #272828;
+}
+
+/* Icons */
+.inputbox ion-icon {
+    position: absolute;
+    right: 10px;
+    color: #ffffff;
+    font-size: 1.5rem;
+    top: 15px;
+    transition: all 0.5s ease-in-out;
+}
+
+/* Button */
+button {
+    width: 100%;
+    height: 50px;
+    border-radius: 40px;
+    background-color: rgb(23, 45, 214);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 700;
+    transition: all 0.4s ease;
+    color: white;
+}
+
+button:hover {
+    background-color: #575a5e;
+    box-shadow: 0 0 10px #2f3337, 0 0 20px #6f7982;
+}
+
+/* Register/Login Text */
+.register {
+    font-size: 1.1rem;
+    color: #ffffff;
+    text-align: center;
+    margin: 25px 0 10px;
+    transition: all 0.5s ease-in-out;
+}
+
+.register p a {
+    text-decoration: none;
+    color: #00bfff;
+    font-weight: 700;
+    transition: all 0.5s ease-in-out;
+}
+
+.register p a:hover {
+    text-decoration: underline;
+    color: #a8a8a8;
+}
+/* Show Form on Hover */
+body:hover section {
+    opacity: 1;
+    visibility: visible;
+}
