@@ -3,37 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sign Up</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
-    </head>
-
+</head>
 <body>
     <section>
         <form>
             <h1>Sign Up</h1>
-        <div class="inputbox">
-            <ion-icon name="person-outline"></ion-icon>
-            <input type="text" name="name" required>
-            <label>Name</label>
-        </div>
-        <div class="inputbox">
-            <ion-icon name="mail-outline"></ion-icon>
-            <input type="email" name="email" required>
-            <label>Email</label>
-        </div>
-        <div class="inputbox">
-            <ion-icon name="lock-closed-outline"></ion-icon>
-            <input type="password" name="password" required>
-            <label>Password</label>
-        </div>
-        <div class="register">
-            <button>Sign Up</button> <br>
-            <br>
-                <p>Already Have an Account?  <a href="#">Log In</a></p>
+            <div class="input-container">
+                <ion-icon name="person-outline"></ion-icon>
+                <div class="inputbox">
+                    <input type="text" name="name" required>
+                    <label>Name</label>
+                </div>
+            </div>
+            <div class="input-container">
+                <ion-icon name="mail-outline"></ion-icon>
+                <div class="inputbox">
+                    <input type="email" name="email" required>
+                    <label>Email</label>
+                </div>
+            </div>
+            <div class="input-container">
+                <ion-icon name="lock-closed-outline"></ion-icon>
+                <div class="inputbox">
+                    <input type="password" name="password" required>
+                    <label>Password</label>
+                </div>
+            </div>
+            <div class="register">
+                <button>Sign Up</button>
+                <br><br>
+                <p>Already Have an Account? <a href="#">Log In</a></p>
             </div>
         </form>
     </section>
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+    let inputs = document.querySelectorAll(".inputbox input");
+
+    inputs.forEach(input => {
+        input.addEventListener("focus", function () {
+            let icon = this.closest(".input-container").querySelector("ion-icon");
+            if (icon) {
+                icon.style.opacity = "1";
+            }
+        });
+
+        input.addEventListener("blur", function () {
+            let icon = this.closest(".input-container").querySelector("ion-icon");
+            if (icon) {
+                icon.style.opacity = "0";
+            }
+        });
+    });
+});
+</script>
+
 </body>
 </html>

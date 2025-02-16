@@ -4,10 +4,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Crimson Text', serif;
+    font-family: 'Poppins', sans-serif;
 }
 
-/* Body Styling */
 body {
     display: flex;
     align-items: center;
@@ -16,46 +15,50 @@ body {
     background-image: url(../1739689510633.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
+    padding: 20px;
 }
 
-/* Sign Up Box */
 section {
     position: relative;
-    max-width: 500px;
-    background: rgba(40, 39, 39, 0.6);
+    width: 100%;
+    max-width: 400px;
+    background: rgba(40, 39, 39, 0.8);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     border: 2px solid rgba(255, 255, 255, 0.8);
-    border-radius: 20px;
-    backdrop-filter: blur(30px);
+    border-radius: 15px;
+    backdrop-filter: blur(20px);
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    padding: 2rem 3rem;
+    padding: 3rem;
     transition: all 0.5s ease-in-out;
-    opacity: 0;
-    visibility: hidden;
 }
 
-/* Title */
 h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: #b2c5c5ac;
     text-align: center;
     font-weight: 700;
 }
 
-/* Input Box */
+.input-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    margin: 15px 0;
+    position: relative;
+}
+
 .inputbox {
     position: relative;
-    margin: 15px 0;
     width: 100%;
 }
 
-/* Input Field */
 .inputbox input {
     width: 100%;
-    height: 50px;
+    height: 45px;
     background: transparent;
     border: 2px solid #ffffff;
     outline: none;
@@ -66,41 +69,46 @@ h1 {
     transition: 0.4s ease-in-out;
 }
 
-/* Placeholder Styling Like in Image */
 .inputbox input::placeholder {
     color: rgba(255, 255, 255, 0.6);
     font-size: 1rem;
 }
 
-/* Neon Glow Effect */
 .inputbox input:focus {
     border-color: #8e9292;
-    box-shadow: 0 0 50px #7f8386, 0 0 50px #272828;
+    box-shadow: 0 0 10px #7f8386;
 }
 
-/* Icons */
-.inputbox ion-icon {
-    position: absolute;
-    right: 10px;
+.input-container ion-icon {
     color: #ffffff;
-    font-size: 1.5rem;
-    top: 15px;
-    transition: all 0.5s ease-in-out;
+    font-size: 2rem;
+    position: absolute;
+    right: -35px;
+    top: 40%;
+    transform: translateY(-50%);
+    opacity: 0; /* Hide by default */
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none; /* Prevents accidental interaction */
 }
 
-/* Button */
+/* Make the icon appear when the input field is focused */
+.inputbox input:focus ~ ion-icon {
+    opacity: 1;
+}
+
 button {
     width: 100%;
-    height: 50px;
-    border-radius: 40px;
+    height: 45px;
+    border-radius: 8px;
     background-color: rgb(23, 45, 214);
     border: none;
     outline: none;
     cursor: pointer;
-    font-size: 1.2rem;
-    font-weight: 700;
+    font-size: 1rem;
+    font-weight: 600;
     transition: all 0.4s ease;
     color: white;
+    margin-top: 10px;
 }
 
 button:hover {
@@ -108,13 +116,11 @@ button:hover {
     box-shadow: 0 0 10px #2f3337, 0 0 20px #6f7982;
 }
 
-/* Register/Login Text */
 .register {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: #ffffff;
     text-align: center;
-    margin: 25px 0 10px;
-    transition: all 0.5s ease-in-out;
+    margin: 15px 0 10px;
 }
 
 .register p a {
@@ -128,8 +134,24 @@ button:hover {
     text-decoration: underline;
     color: #a8a8a8;
 }
-/* Show Form on Hover */
-body:hover section {
-    opacity: 1;
-    visibility: visible;
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    section {
+        max-width: 90%;
+        padding: 1.5rem;
+    }
+    h1 {
+        font-size: 1.8rem;
+    }
+    .inputbox input {
+        font-size: 0.9rem;
+        height: 40px;
+    }
+    button {
+        font-size: 0.9rem;
+        height: 40px;
+    }
 }
